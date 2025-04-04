@@ -1,77 +1,128 @@
-<!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/widget.css">
-  <link rel="stylesheet" href="./css/setting.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap" rel="stylesheet">
-  <title>Trình Phát Nhạc</title>
-</head>
-<body>
-  <div class="container-wrap">
-    <div id="bg" class="bg">
-      <video id="bg-video" autoplay muted loop>
-        <source src="./video/background.mp4" type="video/mp4">
-      </video>
-      <div class="light-effect">
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <title>
+   Trình Phát Nhạc
+  </title>
+  <style>
+   body {
+      font-family: 'Rajdhani', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-900 text-white">
+  <div class="container mx-auto p-4">
+   <div class="relative">
+    <video autoplay="" class="absolute inset-0 w-full h-full object-cover" id="bg-video" loop="" muted="">
+     <source src="https://placehold.co/800x600" type="video/mp4"/>
+    </video>
+    <div class="absolute inset-0 bg-black opacity-50">
+    </div>
+    <div class="relative z-10 p-4">
+     <header class="flex justify-between items-center mb-4">
+      <div class="flex items-center space-x-2">
+       <i class="fas fa-music text-2xl">
+       </i>
+       <span class="text-xl font-semibold" id="song-title">
+        Trình phát nhạc
+       </span>
       </div>
+      <div>
+       <i class="fas fa-bars text-2xl hidden" id="setting-menu">
+       </i>
+      </div>
+     </header>
+     <main class="mb-4">
+      <canvas class="w-full h-32 bg-gray-800 rounded-md" id="music-canvas">
+      </canvas>
+      <div class="mt-4 bg-gray-800 p-2 rounded-md">
+       <section class="text-center" id="music-lrc">
+       </section>
+      </div>
+     </main>
+     <aside class="mb-4">
+      <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden">
+       <div class="absolute top-0 left-0 h-full bg-green-500" id="music-progress" style="width: 50%;">
+       </div>
+       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full">
+       </div>
+      </div>
+      <div class="mt-4" id="info-cover">
+       <img alt="Album cover image" class="w-24 h-24 mx-auto rounded-full" height="100" src="https://storage.googleapis.com/a1aa/image/YqTf3HDptX50CyBdYWX6oXvIZa34uB4QzGP_X-EHm1s.jpg" width="100"/>
+      </div>
+     </aside>
+     <aside class="flex justify-center items-center space-x-1 mb-4">
+      <span class="text-xl" id="time-minute">
+       00
+      </span>
+      <span class="text-xl">
+       :
+      </span>
+      <span class="text-xl" id="time-second">
+       00
+      </span>
+     </aside>
+     <aside class="flex justify-center space-x-4">
+      <div class="control-btn p-2 bg-gray-800 rounded-full cursor-pointer" id="prevBtn">
+       <i class="fas fa-backward text-xl">
+       </i>
+      </div>
+      <div class="control-btn p-2 bg-green-500 rounded-full cursor-pointer" id="playBtn">
+       <i class="fas fa-play text-xl">
+       </i>
+      </div>
+      <div class="control-btn p-2 bg-gray-800 rounded-full cursor-pointer" id="nextBtn">
+       <i class="fas fa-forward text-xl">
+       </i>
+      </div>
+     </aside>
+     <audio id="audio-player" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+     </audio>
     </div>
-    <div class="card-wrap">
-      <header class="card-header">
-        <div class="card-header--title">
-          <i class="iconfont icon-music"></i>
-          <span id="song-title">Trình phát nhạc</span>
-        </div>
-        <div class="card-header--options">
-          <i id="setting-menu" class="iconfont icon-menu--fill" style="display: none;"></i>
-        </div>
-      </header>
-      <main class="card-body">
-        <canvas id="music-canvas"></canvas>
-        <div class="lrc-box">
-          <section id="music-lrc"></section>
-        </div>
-      </main>
-      <aside class="info-widget">
-        <div class="progress-container">
-          <div class="progress-bar" id="music-progress">
-            <div class="progress-current"></div>
-            <div class="progress-handle"></div>
-          </div>
-        </div>
-        <div id="info-cover"></div>
-
-      </aside>
-      <aside class="time-widget">
-        <span id="time-minute">00</span>
-        <span>:</span>
-        <span id="time-second">00</span>
-      </aside>
-      <aside class="control-widget">
-        <div class="control-btn" id="prevBtn">
-          <i class="iconfont icon-play-previous"></i>
-        </div>
-        <div class="control-btn animation" id="playBtn">
-          <i class="iconfont icon-play1"></i>
-        </div>
-        <div class="control-btn" id="nextBtn">
-          <i class="iconfont icon-play-next"></i>
-        </div>
-      </aside>
-    </div>
+   </div>
   </div>
-  
-  <script src="./js/DomVisual.js"></script>
-  <script src="./js/AudioVisual.js"></script>
-  <script src="./js/index.js"></script>
-</body>
-</html> 
+  <script>
+   const audioPlayer = document.getElementById('audio-player');
+    const playBtn = document.getElementById('playBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const timeMinute = document.getElementById('time-minute');
+    const timeSecond = document.getElementById('time-second');
+    const musicProgress = document.getElementById('music-progress');
+
+    playBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playBtn.innerHTML = '<i class="fas fa-pause text-xl"></i>';
+      } else {
+        audioPlayer.pause();
+        playBtn.innerHTML = '<i class="fas fa-play text-xl"></i>';
+      }
+    });
+
+    audioPlayer.addEventListener('timeupdate', () => {
+      const minutes = Math.floor(audioPlayer.currentTime / 60);
+      const seconds = Math.floor(audioPlayer.currentTime % 60);
+      timeMinute.textContent = minutes < 10 ? '0' + minutes : minutes;
+      timeSecond.textContent = seconds < 10 ? '0' + seconds : seconds;
+      const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      musicProgress.style.width = progressPercent + '%';
+    });
+
+    prevBtn.addEventListener('click', () => {
+      audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 10);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + 10);
+    });
+  </script>
+ </body>
+</html>
