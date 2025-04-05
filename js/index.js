@@ -2,19 +2,19 @@ window.onload = function () {
   // Danh sách nhạc local
   const PLAY_LIST = [
     {
-      title: "SơnTùng MP3",
+      title: "Sóng Gió Remix Jack🐝🐝",
       url: "./nhac/baihat1.mp3",
       cover: "./images/cover1.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
-      title: "Sóng Gió Remix Jack",
+      title: "Khát Vọng Tuổi Trẻ 💗💞💌",
       url: "./nhac/baihat2.mp3",
       cover: "./images/cover2.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
-      title: "Khát Vọng Tuổi Trẻ",
+      title: "Sơn Tùng Mp3🌸✅",
       url: "./nhac/baihat3.mp3",
       cover: "./images/cover3.png",
       lrc: "./lrc/duxa_douyin.lrc"
