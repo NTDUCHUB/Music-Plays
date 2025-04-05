@@ -2,19 +2,19 @@ window.onload = function () {
   // Danh sách nhạc local
   const PLAY_LIST = [
     {
-      title: "多远都要在一起 - Dù Xa Đến Đâu Cũng Sẽ Bên Nhau",
+      title: "SơnTùng MP3",
       url: "./nhac/baihat1.mp3",
       cover: "./images/cover1.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
-      title: "多远都要在一起 - Dù Xa Đến Đâu Cũng Sẽ Bên Nhau",
+      title: "Sóng Gió Remix Jack",
       url: "./nhac/baihat2.mp3",
       cover: "./images/cover2.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
-      title: "多远都要在一起 - Dù Xa Đến Đâu Cũng Sẽ Bên Nhau",
+      title: "Khát Vọng Tuổi Trẻ",
       url: "./nhac/baihat3.mp3",
       cover: "./images/cover3.png",
       lrc: "./lrc/duxa_douyin.lrc"
