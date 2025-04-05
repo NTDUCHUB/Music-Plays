@@ -10,7 +10,7 @@ window.onload = function () {
     {
       title: "Khát Vọng Tuổi Trẻ 💗💞💌",
       url: "./nhac/baihat2.mp3",
-      cover: "./images/cover2.png",
+      cover: "./images/cover3.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
