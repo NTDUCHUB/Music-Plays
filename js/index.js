@@ -4,7 +4,7 @@ window.onload = function () {
     {
       title: "Sóng Gió Remix Jack🐝🐝",
       url: "./nhac/baihat1.mp3",
-      cover: "./images/cover1.png",
+      cover: "./images/cover2.png",
       lrc: "./lrc/duxa_douyin.lrc"
     },
     {
@@ -16,7 +16,7 @@ window.onload = function () {
     {
       title: "Sơn Tùng Mp3🌸✅",
       url: "./nhac/baihat3.mp3",
-      cover: "./images/cover3.png",
+      cover: "./images/cover1.png",
       lrc: "./lrc/duxa_douyin.lrc"
     }
   ];
